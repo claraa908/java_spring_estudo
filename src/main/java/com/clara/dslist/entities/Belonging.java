@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tab_belonging")
+@Table(name = "tb_belonging")
 public class Belonging {
     @EmbeddedId
     private BelongingPK id = new BelongingPK();
