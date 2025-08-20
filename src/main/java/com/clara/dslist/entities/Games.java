@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 import java.util.Objects;
 
+//Aqui temos uma classe que é registrada como entidade com o intuito de pegar suas caracteristicas e criar uma tabela no banco
+//com as mesmas
+//É chamada de ORM(object-relational mapping), ou seja, a partir do objeto eu faço uma tabela no meu banco
 @Entity
 @Table(name = "tb_game")
 public class Games {
@@ -19,7 +22,7 @@ public class Games {
     private String platforms;
     private double score;
     private String imgUrl;
-    
+
     @Column(columnDefinition = "TEXT")
     private String shortDescription;
 
