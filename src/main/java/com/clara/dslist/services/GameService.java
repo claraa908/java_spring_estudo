@@ -3,6 +3,7 @@ package com.clara.dslist.services;
 import com.clara.dslist.dto.GameDTO;
 import com.clara.dslist.dto.GameMinDTO;
 import com.clara.dslist.entities.Games;
+import com.clara.dslist.projections.GameMinProjection;
 import com.clara.dslist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,13 @@ public class GameService {
     @Transactional(readOnly = true)
     public List<GameMinDTO> findAll(){
         List<Games> result = gameRepository.findAll();
+        List<GameMinDTO> dto = result.stream().map(GameMinDTO::new).toList();
+        return  dto;
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> searchByList(Long listId){
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
         List<GameMinDTO> dto = result.stream().map(GameMinDTO::new).toList();
         return  dto;
     }
