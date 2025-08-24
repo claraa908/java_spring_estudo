@@ -9,7 +9,7 @@ import com.clara.dslist.projections.GameMinProjection;
 public class GameMinDTO {
     private long id;
     private String title;
-    private int year;
+    private int gameYear;
     private String imgUrl;
     private String shortDescription;
 
@@ -18,7 +18,7 @@ public class GameMinDTO {
     public GameMinDTO(Games entity) {
         id = entity.getId();
         title = entity.getTitle();
-        year = entity.getYear();
+        gameYear = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
     }
@@ -26,7 +26,7 @@ public class GameMinDTO {
     public GameMinDTO(GameMinProjection projection) {
         id = projection.getId();
         title = projection.getTitle();
-        year = projection.getYear();
+        gameYear = projection.getGameYear();
         imgUrl = projection.getImgUrl();
         shortDescription = projection.getShortDescription();
     }
@@ -39,8 +39,8 @@ public class GameMinDTO {
         return title;
     }
 
-    public int getYear() {
-        return year;
+    public int getGameYear() {
+        return gameYear;
     }
 
     public String getImgUrl() {
